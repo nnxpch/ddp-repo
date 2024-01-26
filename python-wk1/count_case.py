@@ -9,7 +9,16 @@ Non-alphabetic characters in the string should be ignored and not counted.
 
 def case_counter(text):
     # Your code goes here
-    pass
+    upper_alpha = 0
+    lower_alpha = 0
+
+    for text in text.strip():
+        if text.isupper() == True:
+            upper_alpha += 1
+        elif text.islower() == True:
+            lower_alpha += 1
+        else: pass
+    print("Uppercase letters: ", upper_alpha, "Lowercase letters: ", lower_alpha)
 
 
 # Test cases
