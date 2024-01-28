@@ -12,22 +12,21 @@ def speeding_ticket(speed, is_birthday):
     # Your code goes here
     if is_birthday == True:
         if speed <= 65: 
-            print("No Ticket")
+            ticket = "No Ticket"
         elif speed >= 66 and speed <= 85:
-            print("Small Ticket")
+            ticket = "Small Ticket"
         elif speed >= 86: 
-            print("Big Ticket")
-        else: print("No ticket matches")
+            ticket = "Big Ticket"
+        else: ticket = "No ticket matches"
     elif is_birthday == False:
         if speed <= 60: 
-            print("No Ticket")
+            ticket = "No Ticket"
         elif speed >= 61 and speed <= 80:
-            print("Small Ticket")
+            ticket = "Small Ticket"
         elif speed >= 81: 
-            print("Big Ticket")
-        else: print("No ticket matches")
-    pass
-
+            ticket = "Big Ticket"
+        else: ticket = "No ticket matches"
+    return ticket
 
 # Test cases
 print(speeding_ticket(60, False))  # Expected output: "No Ticket"
