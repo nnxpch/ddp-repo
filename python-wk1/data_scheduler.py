@@ -19,13 +19,23 @@ Example Test Cases:
 2. date_passed('26th March', '26th March') should indicate that the scheduled date is today.
 3. date_passed('26th March', '27th March') should indicate that the scheduled date is yet to pass.
 """
-import datetime
+from datetime import datetime
 
 def date_passed(todays_date, scheduled_date):
-    # Your code goes here
+    # Your code goes here    
     # Implement the logic to compare the dates and print the appropriate message
-    pass  # Delete this after implementing some code inside this function
+    date_format = "%dth %B"
 
+    # Parse the date strings into datetime objects
+    today = datetime.strptime(todays_date, date_format)
+    scheduled = datetime.strptime(scheduled_date, date_format)
+
+    if today > scheduled:
+        print("The scheduled date has passed.")
+    elif today == scheduled:
+        print("The scheduled date is today.")
+    else:
+        print("The scheduled date is yet to pass.")
 
 # Test cases
 date_passed("26th March", "25th March")  # Expected: Scheduled date has passed
