@@ -28,12 +28,10 @@ def compound_interest_calculator(P, r, n, t):
     # Calculate compound interest using the formula A = P(1 + r/n)^(nt)
     if P >= 1 and t >= 1:
         A = P * (1 + r/n)**(n*t)
-        return round(A, 2)
-        
+        return round(A, 2)  
         # Check for edge cases: negative principal amount or negative time
     elif P < 0 or t < 0:
         return "Invalid input. Principal amount and time must be non-negative."
-
         # Check for edge case: zero interest rate
     elif r == 0:
         return P

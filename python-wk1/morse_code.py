@@ -53,14 +53,12 @@ def morse_translator(text):
         morse_code = [] 
         for key in alphabet:
             morse_code.append(morse_code_dict[key])
-            #print(morse_code)
         morse_code_list.append(' '.join(morse_code))
 
     # Join the Morse code for each word with a forward slash
     morse_result = '/'.join(morse_code_list)
 
     return morse_result
-            
 
 
 # Test cases
