@@ -20,10 +20,23 @@ Example Test Cases:
 4. word_filter_counter("Do we see the big picture or just small details?", ["we", "the", "or"]) should return a dictionary with the counts of occurrences of "we", "the", and "or".
 """
 
+import re
 
 def word_filter_counter(text, filter_words):
     # Your code goes here
     # Implement the logic to filter words and count their occurrences
+    
+    fwords = [word.lower() for word in filter_words]
+    words = re.findall(r'\b\w+\b' ,text.lower())
+    words_count = {}
+
+    for word in words:
+        if word in fwords:
+            if word in words_count:
+                words_count[word] += 1
+            else:
+                words_count[word] = 1
+    return words_count
     pass  # Delete this after implementing some code inside this function
 
 
